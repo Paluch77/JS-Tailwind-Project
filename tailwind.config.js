@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+
   theme: {
     extend: {
       backgroundImage: {
@@ -9,6 +10,7 @@ module.exports = {
         earth: "url('/data/planet-earth.png')",
         laptop: "url('/data/laptop.png')",
         heart: "url('/data/heart.png')",
+        phone: "url('/data/smartphone.png')",
       },
     },
   },
