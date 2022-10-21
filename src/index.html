@@ -10,16 +10,17 @@
 </head>
 
 <body>
+
   <header id="header"
-    class="fixed w-screen h-24 lg:bg-transparent sm:bg-white sm:text-black lg:text-white font-bold flex flex-row place-items-center place-content-around duration-300 z-10">
+    class=" fixed w-screen h-24 bg-white text-black lg:bg-transparent sm:bg-white sm:text-black lg:text-white font-bold flex flex-row place-items-center  place-content-around duration-300 z-10">
     <button id="mainLogo" class="text-3xl hover:text-gray-400 cursor-pointer">Start Bootstrap</button>
-    <div id="burgerLogo" class="space-y-2 lg:hidden">
-      <div class="w-8 h-0.5 bg-white sm:bg-black"></div>
-      <div class="w-8 h-0.5 bg-white sm:bg-black"></div>
-      <div class="w-8 h-0.5 bg-white sm:bg-black"></div>
+    <div id="burgerLogo" class="space-y-2 lg:hidden cursor-pointer">
+      <div class="w-8 h-0.5 bg-black"></div>
+      <div class="w-8 h-0.5 bg-black"></div>
+      <div class="w-8 h-0.5 bg-black"></div>
     </div>
     <div id="headerOptions"
-      class="sm:invisible sm:opacity-0 lg:opacity-100 lg:visible flex sm:flex-col lg:flex-row sm:pl-40 lg:pl-0 sm:py-6 lg:py-0 sm:space-y-4 lg:space-y-0 lg:space-x-10 text-xl  sm:fixed lg:static sm:mt-64 lg:mt-0 lg:bg-transparent sm:text-black lg:text-white sm:w-screen lg:w-auto sm:bg-white duration-300 sm:border-b-2 lg:border-none ">
+      class=" hidden invisible opacity-0 lg:opacity-100 lg:visible flex-col lg:flex lg:flex-row lg:pl-0 py-6  items-center sm:items-start sm:pl-[20%]  lg:py-0 space-y-4 lg:space-y-0 lg:space-x-10 text-xl  fixed lg:static mt-64 lg:mt-0 lg:bg-transparent text-black lg:text-white w-screen lg:w-auto bg-white border-b-2 lg:border-none align-start pl-">
       <button id="about" class="hover:text-gray-400 cursor-pointer">About</button>
       <button id="services" class="hover:text-gray-400 cursor-pointer">Services</button>
       <button id="portfolio" class="hover:text-gray-400 cursor-pointer">Portfolio</button>
@@ -27,48 +28,53 @@
     </div>
   </header>
   <div id="topForScroll"
-    class="h-screen w-screen bg-main-background bg-cover bg-center text-white flex justify-center items-center">
-    <div class="lg:w-3/6 sm:w-5/6 flex flex-col justify-center items-center">
-      <p class="lg:text-7xl sm:text-5xl text-center font-bold">
+    class="lg:h-screen h-[50rem] w-screen bg-main-background bg-cover bg-center text-white flex justify-center items-center">
+    <div class="lg:w-3/6 w-[90%] flex flex-col justify-center items-center">
+      <p class="lg:text-7xl text-5xl text-center font-bold">
         Your Favorite Place for Free Bootstrap Themes
       </p>
       <hr class="w-20 h-1 my-8 bg-blue-500 border-none">
       </hr>
-      <p class="lg:text-2xl sm:text-xl text-center">
+      <p class="lg:text-2xl text-xl text-center">
         Start Bootstrap can help you build better websites using the Bootstrap
         framework! Just download a theme and start customizing, no strings
         attached!
       </p>
-      <button class="lg:w-64 sm:w-48 h-20  my-8 bg-blue-500 rounded-full font-bold">
+      <button class="lg:w-64 w-48 h-20  my-8 bg-blue-500 rounded-full font-bold">
         FIND OUT MORE
       </button>
     </div>
   </div>
-  <div id="aboutForScroll" class="w-screen h-auto bg-blue-500 flex justify-center items-center">
-    <div class="py-36 lg:w-3/6 sm:w-5/6 flex flex-col justify-center items-center">
-      <p class="lg:text-5xl sm:text-4xl text-center font-medium">We've got what you need!</p>
-      <hr class="w-20 h-1 my-8 bg-white border-none">
-      </hr>
-      <p class="text-xl text-center">
-        Start Bootstrap has everything you need to get your new website up and
-        running in no time! Choose one of our open source, free to download,
-        and easy to use themes! No strings attached!
-      </p>
-      <button class="lg:w-64 sm:w-48 h-20 my-8 bg-white rounded-full font-bold">
-        GET STARTED!
-      </button>
+  <div class="bg-blue-500 w-screen h-auto">
+    <div id="aboutForScroll"
+      class="w-screen h-auto bg-blue-500 flex justify-center items-center max-w-screen-2xl mx-auto">
+      <div class="py-36 lg:w-3/6 w-[90%] flex flex-col justify-center items-center ">
+        <p class="lg:text-5xl text-4xl text-center font-medium">We've got what you need!</p>
+        <hr class="w-20 h-1 my-8 bg-white border-none">
+        </hr>
+        <p class="text-2xl  text-center">
+          Start Bootstrap has everything you need to get your new website up and
+          running in no time! Choose one of our open source, free to download,
+          and easy to use themes! No strings attached!
+        </p>
+        <button class="lg:w-64 w-48 h-20 my-8 bg-white rounded-full font-bold">
+          GET STARTED!
+        </button>
+      </div>
     </div>
   </div>
-  <div id="servicesForScroll" class="py-36 flex flex-col justify-center items-center content-center bg-white ">
-    <p class="lg:text-5xl sm:text-4xl text-center font-medium">At Your Service</p>
+  <div id="servicesForScroll"
+    class="py-36 w-screen flex flex-col justify-center items-center content-center bg-white max-w-screen-xl mx-auto ">
+    <p class="lg:text-5xl text-4xl text-center font-medium">At Your Service</p>
     <hr class="w-20 h-1 my-8 bg-blue-500 border-none">
     </hr>
-    <div class="flex sm:flex-wrap lg:flex-nowrap flex-row w-screen justify-around px-40">
+    <div class="flex flex-wrap sm:flex-wrap lg:flex-wrap flex-row w-full justify-around lg:basis-1/2 px-40 sm:px-0">
       <div>
-        <div class="w-72 mt-20 flex flex-col  content-center items-center justify-center">
+        <div class="w-72 mt-20 flex flex-col content-center items-center justify-center ">
           <div class="bg-gem-diamond w-16 h-16 bg-cover mb-6"></div>
           <p class="text-4xl font-medium">Sturdy Themes</p>
-          <p class="text-gray-500 text-xl font-normal text-center">Our themes are updated regularly to keep them bug
+          <p class="text-gray-500 text-xl font-normal text-center">Our themes are updated regularly to
+            keep them bug
             free!</p>
         </div>
       </div>
@@ -99,71 +105,81 @@
       </div>
     </div>
   </div>
-  <div id="photolist" class="flex flex-row w-screen h-auto flex-wrap">
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full"><img id="photoHover" class="h-full w-full " src="../data/photo1.jpeg"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
-      </div>
-    </div>
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo2.png"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
-      </div>
-    </div>
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo3.jpeg"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
-      </div>
-    </div>
+  <div class="bg-black w-screen h-auto">
+    <div id="photolist" class="flex flex-row w-screen h-auto flex-wrap max-w-screen-xl mx-auto">
 
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo4.jpeg"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full"><img id="photoHover" class="h-full w-full " src="../data/photo1.jpeg"></div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
       </div>
-    </div>
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo5.webp"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo2.png">
+        </div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
       </div>
-    </div>
-    <div id="photo" class="lg:w-1/3 h-72 sm:w-1/2 relative flex justify-center items-center  ">
-      <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo6.jpeg"></div>
-      <div id="photoCoverInfo"
-        class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
-        <p class="text-white text-xl font-bold">CATEGORY</p>
-        <p class="text-white text-3xl font-mono">Project Name</p>
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo3.jpeg">
+        </div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
+      </div>
+
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo4.jpeg">
+        </div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
+      </div>
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo5.webp">
+        </div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
+      </div>
+      <div id="photo" class="lg:w-1/3 w-screen h-72 sm:w-1/2 relative flex justify-center items-center  ">
+        <div class="absolute h-full w-full  "><img id="photoHover" class="h-full w-full " src="../data/photo6.jpeg">
+        </div>
+        <div id="photoCoverInfo"
+          class=" absolute text-center w-full h-full flex flex-col justify-center items-center filter backdrop-blur-sm duration-500 invisible opacity-0">
+          <p class="text-white text-xl font-bold">CATEGORY</p>
+          <p class="text-white text-3xl font-mono">Project Name</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="w-screen h-auto bg-slate-900 flex flex-col justify-center items-center py-32">
-    <p class="lg:text-5xl sm:text-4xl text-center font-medium text-white ">Free Download at Start Bootstrap!</p>
-    <button class="lg:w-64 sm:w-48 h-20 my-8 bg-white rounded-full font-bold">
+  <div class="w-screen  h-auto bg-slate-900 flex flex-col justify-center items-center py-32">
+    <p class="lg:text-5xl max-w-screen-xl mx-auto text-4xl text-center font-medium text-white ">Free Download at Start
+      Bootstrap!</p>
+    <button class="lg:w-64 w-48 h-20 my-8 bg-white rounded-full font-bold">
       DOWNLOAD NOW!
     </button>
   </div>
-  <div id="contactForScroll" class="h-auto w-screen flex flex-col justify-center items-center content-center py-32 ">
+  <div id="contactForScroll"
+    class="h-auto w-screen max-w-screen-2xl mx-auto flex flex-col justify-center items-center content-center py-32 ">
     <p class="text-5xl text-center font-medium text-black ">Let's Get In Touch!</p>
     <hr class="w-20 h-1 my-8 bg-blue-500 border-none">
     </hr>
-    <p class="text-2xl text-center lg:w-1/2 sm:w-5/6 pb-12">
+    <p class="text-2xl text-center lg:w-1/2 w-[90%] pb-12">
       Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!
     </p>
-    <div id="nameForm" class="relative lg:w-1/2 sm:w-5/6  my-2">
+    <div id="nameForm" class="relative lg:w-1/2  w-[90%]  my-2">
       <input id="formInput"
         class=" block w-full  h-16 border-2 invalid:ring-red-400  invalid:ring-4 focus:ring-4 focus:pl-3 focus:rounded-lg focus:duration-300  rounded-lg outline-none peer placeholder-style placeholder-shown: pl-3 pt-4 text-xl "
         id="name" type="text" placeholder=" ">
@@ -174,7 +190,7 @@
         required.</div>
     </div>
 
-    <div id="emailForm" class="relative lg:w-1/2 sm:w-5/6 my-2 ">
+    <div id="emailForm" class="relative lg:w-1/2 w-[90%] my-2 ">
       <input id="formInput"
         class="block w-full  h-16 border-2 invalid:ring-red-400 invalid:ring-4 focus:ring-4 focus:pl-3 focus:rounded-lg focus:duration-300  rounded-lg outline-none peer placeholder-style placeholder-shown: pl-3 pt-4 text-xl "
         id="email" type="email" placeholder=" ">
@@ -185,7 +201,7 @@
       <div id="notValidEmail" class=" text-lg pl-2 pt-1 text-red-600 font-medium hidden peer-invalid:block">Email is not
         valid.</div>
     </div>
-    <div id="numberForm" class="relative lg:w-1/2 sm:w-5/6 my-2 ">
+    <div id="numberForm" class="relative lg:w-1/2 w-[90%] my-2 ">
       <input id="formInput"
         class="block w-full  h-16 border-2 invalid:ring-red-400 invalid:ring-4 focus:ring-4 focus:pl-3 focus:rounded-lg focus:duration-300  rounded-lg outline-none peer placeholder-style placeholder-shown: pl-3 pt-4 text-xl "
         id="number" type="number" placeholder=" ">
@@ -195,7 +211,7 @@
       <div id="wrongForm" class=" text-lg pl-2 pt-1 text-red-600 font-medium hidden peer-invalid:block">A phone number
         is required.</div>
     </div>
-    <div id="textForm" class="relative lg:w-1/2 sm:w-5/6 formName">
+    <div id="textForm" class="relative lg:w-1/2 w-[90%] formName">
       <textarea id="formInput"
         class="block w-full h-48 border-2 min-h-full max-h-48 placeholder-style-message  invalid:ring-red-400 invalid:ring-4 focus:ring-4 focus:pl-3 focus:rounded-lg focus:duration-300  rounded-lg outline-none peer placeholder-style placeholder-shown: pl-3 pt-5 text-xl"
         id="textarea" type="text" placeholder=" "></textarea>
@@ -205,7 +221,7 @@
 
       <div id="wrongForm" class=" text-lg pl-2 pt-1 text-red-600 font-medium hidden ">A message is required.</div>
     </div>
-    <button id="submitButton" class="lg:w-1/2 sm:w-5/6 h-20 my-8 bg-blue-300 rounded-full font-bold text-white">
+    <button id="submitButton" class="lg:w-1/2 w-[90%] h-20 my-8 bg-blue-300 rounded-full font-bold text-white">
       SUBMIT
     </button>
     <div class="flex flex-col content-center items-center py-6">

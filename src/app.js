@@ -62,12 +62,12 @@ contactButton.addEventListener("click", () => {
 const burger = document.querySelector("#burgerLogo");
 
 burger.addEventListener("click", () => {
-  if (headerOptions.classList.contains("sm:invisible")) {
-    headerOptions.classList.remove("sm:invisible");
-    headerOptions.classList.add("sm:visible", "sm:opacity-100");
+  if (headerOptions.classList.contains("invisible")) {
+    headerOptions.classList.remove("invisible", "opacity-0", "hidden");
+    headerOptions.classList.add("visible", "opacity-100", "flex", "flex");
   } else {
-    headerOptions.classList.add("sm:invisible");
-    headerOptions.classList.remove("sm:visible", "sm:opacity-100");
+    headerOptions.classList.add("invisible", "hidden");
+    headerOptions.classList.remove("visible", "opacity-100", "flex");
   }
 });
 // Photos section
@@ -79,7 +79,7 @@ childs.forEach((elem) => {
   let photoCoverInfo = elem.querySelector("#photoCoverInfo");
   photoHover.addEventListener("mouseover", () => {
     photoCoverInfo.classList.add("visible", "opacity-100");
-    photoCoverInfo.classList.remove("invisible");
+    photoCoverInfo.classList.remove("invisible", "opacity-0");
   });
   photoCoverInfo.addEventListener("mouseleave", () => {
     photoCoverInfo.classList.add("invisible", "opacity-0");
