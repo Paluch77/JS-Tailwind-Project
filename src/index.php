@@ -28,8 +28,8 @@
     </div>
   </header>
   <div id="topForScroll"
-    class="lg:h-screen h-[50rem] w-screen bg-main-background bg-cover bg-center text-white flex justify-center items-center">
-    <div class="lg:w-3/6 w-[90%] flex flex-col justify-center items-center">
+    class="lg:h-screen h-[50rem] bg-main-background bg-cover bg-center text-white flex justify-center items-center max-w-screen-2xl mx-auto">
+    <div class="lg:w-3/6 w-[90%] flex flex-col justify-center items-center max-w-screen-2xl ">
       <p class="lg:text-7xl text-5xl text-center font-bold">
         Your Favorite Place for Free Bootstrap Themes
       </p>
@@ -47,8 +47,8 @@
   </div>
   <div class="bg-blue-500 w-screen h-auto">
     <div id="aboutForScroll"
-      class="w-screen h-auto bg-blue-500 flex justify-center items-center max-w-screen-2xl mx-auto">
-      <div class="py-36 lg:w-3/6 w-[90%] flex flex-col justify-center items-center ">
+      class="w-screen h-auto bg-blue-500 flex justify-center items-center max-w-screen-2xl mx-auto ">
+      <div class="py-36 lg:w-3/6 w-[90%] flex flex-col justify-center items-center  ">
         <p class="lg:text-5xl text-4xl text-center font-medium">We've got what you need!</p>
         <hr class="w-20 h-1 my-8 bg-white border-none">
         </hr>

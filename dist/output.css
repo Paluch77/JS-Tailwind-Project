@@ -1505,6 +1505,10 @@ video {
     width: 50%;
   }
 
+  .lg\:max-w-screen-2xl {
+    max-width: 1536px;
+  }
+
   .lg\:basis-1\/2 {
     flex-basis: 50%;
   }
@@ -1611,11 +1615,19 @@ video {
   .xl\:max-w-3xl {
     max-width: 48rem;
   }
+
+  .xl\:max-w-screen-2xl {
+    max-width: 1536px;
+  }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:max-w-3xl {
     max-width: 48rem;
+  }
+
+  .\32xl\:max-w-screen-2xl {
+    max-width: 1536px;
   }
 }
 
