@@ -20,7 +20,6 @@ document.addEventListener("scroll", () => {
 
 const logoButton = document.querySelector("#mainLogo");
 const topForScroll = document.querySelector("#topForScroll");
-
 logoButton.addEventListener("click", () => {
   topForScroll.scrollIntoView({ behavior: "smooth" });
 });
@@ -35,7 +34,6 @@ aboutButton.addEventListener("click", () => {
 
 const servicesButton = document.querySelector("#services");
 const servicesForScroll = document.querySelector("#servicesForScroll");
-console.log(servicesForScroll.scrollHeight);
 
 servicesButton.addEventListener("click", () => {
   servicesForScroll.scrollIntoView({ behavior: "smooth" });
@@ -44,7 +42,6 @@ servicesButton.addEventListener("click", () => {
 
 const portfolioButton = document.querySelector("#portfolio");
 const photolist = document.querySelector("#photolist");
-console.log(photolist.scrollHeight);
 
 portfolioButton.addEventListener("click", () => {
   photolist.scrollIntoView({ behavior: "smooth" });
@@ -53,7 +50,6 @@ portfolioButton.addEventListener("click", () => {
 
 const contactButton = document.querySelector("#contact");
 const contactForScroll = document.querySelector("#contactForScroll");
-console.log(contactForScroll.scrollHeight);
 
 contactButton.addEventListener("click", () => {
   contactForScroll.scrollIntoView({ behavior: "smooth" });
@@ -170,7 +166,19 @@ data.forEach((elem) => {
   });
 });
 
-//Gallery
+// Buttons
+
+const findOutMore = document.querySelector("#findOutMore");
+findOutMore.addEventListener("click", () => {
+  servicesForScroll.scrollIntoView({ behavior: "smooth" });
+});
+
+const getStarted = document.querySelector("#getStarted");
+getStarted.addEventListener("click", () => {
+  servicesForScroll.scrollIntoView({ behavior: "smooth" });
+});
+
+// Gallery
 
 class Gallery {
   constructor(src) {
@@ -200,14 +208,14 @@ class Gallery {
     // Arrows
     const arrowLeft = document.createElement("div");
     const arrowLeftClassList =
-      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] left-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover".split(
+      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] left-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover cursor-pointer".split(
         " "
       );
     arrowLeft.classList.add(...arrowLeftClassList);
 
     const arrowRight = document.createElement("div");
     const arrowRightClassList =
-      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] right-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover rotate-180".split(
+      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] right-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover rotate-180 cursor-pointer".split(
         " "
       );
     arrowRight.classList.add(...arrowRightClassList);
@@ -215,7 +223,9 @@ class Gallery {
     // Img
     const imgWrapper = document.createElement("div");
     const imgWrapperClassList =
-      "fixed w-1/2 h-1/4 max-w-2xl z-10 rounded-lg bg-black".split(" ");
+      "outside-click fixed w-1/2 h-1/4 max-w-2xl z-10 rounded-lg bg-black".split(
+        " "
+      );
     imgWrapper.classList.add(...imgWrapperClassList);
     const img = document.createElement("img");
     const imgClassList = "w-full h-full rounded-lg".split(" ");
@@ -226,7 +236,7 @@ class Gallery {
     // Delete
     const deleteDiv = document.createElement("div");
     const deleteDivClassList =
-      "fixed right-10 top-10 z-10 w-12 lg:w-16 h-12 lg:h-16 bg-off bg-cover".split(
+      "fixed right-10 top-10 z-10 w-12 lg:w-16 h-12 lg:h-16 bg-off bg-cover cursor-pointer".split(
         " "
       );
     deleteDiv.classList.add(...deleteDivClassList);
@@ -238,6 +248,17 @@ class Gallery {
     divWrapper.appendChild(arrowLeft);
 
     //Logic
+
+    divWrapper.addEventListener("click", (e) => {
+      if (
+        !imgWrapper.contains(e.target) &&
+        !arrowLeft.contains(e.target) &&
+        !arrowRight.contains(e.target) &&
+        !deleteDiv.contains(e.target)
+      ) {
+        document.querySelector(`#${randomId}`).remove();
+      }
+    });
 
     deleteDiv.addEventListener("click", () => {
       const variable = document.querySelector(`#${randomId}`);
@@ -292,7 +313,6 @@ class Gallery {
 }
 const photos = document.querySelectorAll("#photoHover");
 let photosObject = [];
-console.log(photosObject);
 const allPhotos = document.querySelectorAll("#photo");
 allPhotos.forEach((photoDiv) => {
   const img = photoDiv.querySelector("#photoHover");
@@ -306,12 +326,10 @@ photos.forEach((photo) => {
   const srcAttribute = photo.getAttribute("src");
   const eachPhoto = new Gallery(srcAttribute);
   photo.addEventListener("click", () => {
-    console.log("dupa");
     const test = document.querySelector("#testDiv");
     test.appendChild(eachPhoto.data);
   });
 });
 
-const dupa = new Gallery(photosObject);
-
-console.log(dupa.data);
+const galleryNew = new Gallery(photosObject);
+galleryNew.data;
