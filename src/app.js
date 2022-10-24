@@ -35,6 +35,7 @@ aboutButton.addEventListener("click", () => {
 
 const servicesButton = document.querySelector("#services");
 const servicesForScroll = document.querySelector("#servicesForScroll");
+console.log(servicesForScroll.scrollHeight);
 
 servicesButton.addEventListener("click", () => {
   servicesForScroll.scrollIntoView({ behavior: "smooth" });
@@ -43,6 +44,7 @@ servicesButton.addEventListener("click", () => {
 
 const portfolioButton = document.querySelector("#portfolio");
 const photolist = document.querySelector("#photolist");
+console.log(photolist.scrollHeight);
 
 portfolioButton.addEventListener("click", () => {
   photolist.scrollIntoView({ behavior: "smooth" });
@@ -51,6 +53,7 @@ portfolioButton.addEventListener("click", () => {
 
 const contactButton = document.querySelector("#contact");
 const contactForScroll = document.querySelector("#contactForScroll");
+console.log(contactForScroll.scrollHeight);
 
 contactButton.addEventListener("click", () => {
   contactForScroll.scrollIntoView({ behavior: "smooth" });
@@ -112,6 +115,7 @@ function validateEmail(email) {
 data.forEach((elem) => {
   const formInput = elem.querySelector("#formInput");
   const wrongForm = elem.querySelector("#wrongForm");
+  const label = elem.querySelector("#label");
 
   formInput.addEventListener("keyup", (e) => {
     if (formInput.type === "email") {
@@ -161,4 +165,153 @@ data.forEach((elem) => {
       wrongForm.classList.remove("block");
     }
   });
+  label.addEventListener("click", () => {
+    formInput.focus();
+  });
 });
+
+//Gallery
+
+class Gallery {
+  constructor(src) {
+    this.src = src;
+  }
+  get data() {
+    this.events();
+    return this.src;
+  }
+
+  srcAttribute() {
+    return this.src;
+  }
+
+  buildDiv(attribute) {
+    const randomId = "Random" + Math.floor(Math.random() * 1000) + 1;
+    // Wrap
+    const divWrapper = document.createElement("div");
+    const wrapperClassList =
+      "fixed z-10 inset-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center".split(
+        " "
+      );
+
+    divWrapper.setAttribute("id", randomId);
+    divWrapper.classList.add(...wrapperClassList);
+
+    // Arrows
+    const arrowLeft = document.createElement("div");
+    const arrowLeftClassList =
+      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] left-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover".split(
+        " "
+      );
+    arrowLeft.classList.add(...arrowLeftClassList);
+
+    const arrowRight = document.createElement("div");
+    const arrowRightClassList =
+      "fixed top-1/2 lg:mt-[-2rem] mt-[-1.5rem] right-10 z-10 lg:w-16 w-12 lg:h-16 h-12 bg-leftArrow bg-cover rotate-180".split(
+        " "
+      );
+    arrowRight.classList.add(...arrowRightClassList);
+
+    // Img
+    const imgWrapper = document.createElement("div");
+    const imgWrapperClassList =
+      "fixed w-1/2 h-1/4 max-w-2xl z-10 rounded-lg bg-black".split(" ");
+    imgWrapper.classList.add(...imgWrapperClassList);
+    const img = document.createElement("img");
+    const imgClassList = "w-full h-full rounded-lg".split(" ");
+    img.classList.add(...imgClassList);
+    img.setAttribute("src", attribute);
+    imgWrapper.appendChild(img);
+
+    // Delete
+    const deleteDiv = document.createElement("div");
+    const deleteDivClassList =
+      "fixed right-10 top-10 z-10 w-12 lg:w-16 h-12 lg:h-16 bg-off bg-cover".split(
+        " "
+      );
+    deleteDiv.classList.add(...deleteDivClassList);
+
+    // Append childs
+    divWrapper.appendChild(imgWrapper);
+    divWrapper.appendChild(deleteDiv);
+    divWrapper.appendChild(arrowRight);
+    divWrapper.appendChild(arrowLeft);
+
+    //Logic
+
+    deleteDiv.addEventListener("click", () => {
+      const variable = document.querySelector(`#${randomId}`);
+      variable.remove();
+    });
+
+    arrowRight.addEventListener("click", () => {
+      const imgAttribute = img.getAttribute("src");
+      let index;
+      photosObject.forEach((elem) => {
+        if (imgAttribute == elem.src) {
+          const nextIndex = photosObject.indexOf(elem) + 1;
+          if (nextIndex < 6) {
+            index = nextIndex;
+          } else {
+            index = 0;
+          }
+        }
+      });
+      const nextPhoto = photosObject[index].src;
+      img.setAttribute("src", nextPhoto);
+    });
+
+    arrowLeft.addEventListener("click", () => {
+      const imgAttribute = img.getAttribute("src");
+      let index;
+      photosObject.forEach((elem) => {
+        if (imgAttribute == elem.src) {
+          const nextIndex = photosObject.indexOf(elem) - 1;
+          if (nextIndex < 6 && nextIndex >= 0) {
+            index = nextIndex;
+          } else {
+            index = 5;
+          }
+        }
+      });
+      const nextPhoto = photosObject[index].src;
+      img.setAttribute("src", nextPhoto);
+    });
+
+    return divWrapper;
+  }
+  events() {
+    this.src.forEach((elem) => {
+      const srcAttribute = elem.img.getAttribute("src");
+      elem.photoCover.addEventListener("click", () => {
+        const gallery = document.querySelector("#gallery");
+        gallery.appendChild(this.buildDiv(srcAttribute));
+      });
+    });
+  }
+}
+const photos = document.querySelectorAll("#photoHover");
+let photosObject = [];
+console.log(photosObject);
+const allPhotos = document.querySelectorAll("#photo");
+allPhotos.forEach((photoDiv) => {
+  const img = photoDiv.querySelector("#photoHover");
+  const src = img.getAttribute("src");
+  const photoCover = photoDiv.querySelector("#photoCoverInfo");
+  photosObject.push({ img, photoCover, src });
+});
+const photoClicker = document.querySelectorAll("#photoCoverInfo");
+
+photos.forEach((photo) => {
+  const srcAttribute = photo.getAttribute("src");
+  const eachPhoto = new Gallery(srcAttribute);
+  photo.addEventListener("click", () => {
+    console.log("dupa");
+    const test = document.querySelector("#testDiv");
+    test.appendChild(eachPhoto.data);
+  });
+});
+
+const dupa = new Gallery(photosObject);
+
+console.log(dupa.data);
