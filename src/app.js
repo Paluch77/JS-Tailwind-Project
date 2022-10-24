@@ -30,7 +30,7 @@ const aboutForScroll = document.querySelector("#aboutForScroll");
 
 aboutButton.addEventListener("click", () => {
   aboutForScroll.scrollIntoView({ behavior: "smooth" });
-  headerOptions.classList.add("sm:invisible");
+  headerOptions.classList.add("invisible");
 });
 
 const servicesButton = document.querySelector("#services");
@@ -39,7 +39,7 @@ console.log(servicesForScroll.scrollHeight);
 
 servicesButton.addEventListener("click", () => {
   servicesForScroll.scrollIntoView({ behavior: "smooth" });
-  headerOptions.classList.add("sm:invisible");
+  headerOptions.classList.add("invisible");
 });
 
 const portfolioButton = document.querySelector("#portfolio");
@@ -48,7 +48,7 @@ console.log(photolist.scrollHeight);
 
 portfolioButton.addEventListener("click", () => {
   photolist.scrollIntoView({ behavior: "smooth" });
-  headerOptions.classList.add("sm:invisible");
+  headerOptions.classList.add("invisible");
 });
 
 const contactButton = document.querySelector("#contact");
@@ -57,7 +57,7 @@ console.log(contactForScroll.scrollHeight);
 
 contactButton.addEventListener("click", () => {
   contactForScroll.scrollIntoView({ behavior: "smooth" });
-  headerOptions.classList.add("sm:invisible");
+  headerOptions.classList.add("invisible");
 });
 
 // Header burger
@@ -69,7 +69,7 @@ burger.addEventListener("click", () => {
     headerOptions.classList.remove("invisible", "opacity-0", "hidden");
     headerOptions.classList.add("visible", "opacity-100", "flex", "flex");
   } else {
-    headerOptions.classList.add("invisible", "hidden");
+    headerOptions.classList.add("invisible", "hidden", "opacity-0");
     headerOptions.classList.remove("visible", "opacity-100", "flex");
   }
 });
